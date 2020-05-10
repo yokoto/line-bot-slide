@@ -16,7 +16,9 @@ $ heroku create
 
 # これ(Railsの秘匿情報管理)をやらないとpushに失敗する。
 $ rm config/credentials.yml.enc
-$ EDITOR=vim rails credentials:edit # 開いたファイルは保存して終了する。新しくcredentials.yml.encとmaster.keyが作成される。
+# 新しくconfig/credentials.yml.encを作成する。
+# 開いたファイルを保存して終了(:wq)すると、新しくcredentials.yml.encとmaster.keyが作成される。
+$ EDITOR=vim rails credentials:edit
 $ git add .
 $ git commit -m "init credentials and master.key"
 $ heroku config:set RAILS_MASTER_KEY=${master.keyの中身をペースト}
