@@ -25,7 +25,10 @@ $ heroku config:set RAILS_MASTER_KEY=${master.keyの中身をペースト}
 $ heroku push origin master
 $ heroku config:set LINE_CHANNEL_SECRET=${チャネルシークレットをペースト}
 $ heroku config:set LINE_CHANNEL_TOKEN=${チャネルアクセストークンをペースト}
-+++
+```
+
+
+---
 
 
 ### 3枚目のスライド
