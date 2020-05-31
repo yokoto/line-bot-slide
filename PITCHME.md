@@ -14,11 +14,15 @@
 $ heroku login
 $ heroku create
 
+# Dockerコンテナに入る
+$ docker exec -it line-bot_web_1 bash
 # これ(Railsの秘匿情報管理)をやらないとpushに失敗する。
-$ rm config/credentials.yml.enc
+/my_app# rm config/credentials.yml.enc
 # 新しくconfig/credentials.yml.encを作成する。
 # 開いたファイルを保存して終了(:wq)すると、新しくcredentials.yml.encとmaster.keyが作成される。
-$ EDITOR=vim rails credentials:edit
+/my_app# EDITOR=vim rails credentials:edit
+# Dockerコンテナから出る
+/my_app# exit
 $ git add .
 $ git commit -m "init credentials and master.key"
 $ heroku config:set RAILS_MASTER_KEY=${master.keyの中身をペースト}
